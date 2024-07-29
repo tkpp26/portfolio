@@ -31,6 +31,7 @@ export default function Contact() {
 
   return (
     <div
+      id="contact"
       className={`contact-container ${isVisible ? "visible" : ""}`}
       ref={contactRef}
     >

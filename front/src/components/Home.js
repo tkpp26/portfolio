@@ -15,6 +15,7 @@ export default function Home() {
       <Navbar />
       <Introduction />
       <About />
+      <Experience />
       <Portfolio />
       <Contact />
     </>

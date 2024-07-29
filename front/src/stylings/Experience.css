@@ -1,23 +1,93 @@
 .experience-section {
-  padding: 2rem;
   display: flex;
   justify-content: center;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.experience-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wrapper-container {
+  width: 90%;
+  margin: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 8px; /* Optional: adds rounded corners */
+}
+
+.wrapper-container h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .timeline-section {
-  margin-top: 2rem;
+  position: relative; /* Ensure the line is positioned correctly */
 }
 
 .timeline-section ol {
   list-style-type: none;
+  padding-left: 0;
+}
+
+.timeline-section ol::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0.5rem;
+  height: 100%;
+  background-color: #4a5568; /* Color of the vertical line */
 }
 
 .timeline-section li {
   position: relative;
+  padding-left: 1.5rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.timeline-section li.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .timeline-section span {
   position: absolute;
   left: -1.5rem;
+}
+
+.timeline-section h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-section p:first-of-type {
+  font-size: 1rem;
+  color: #1f1f1f;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-section time {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #1f1f1f;
+  padding-top: 0.25rem;
+  padding-bottom: 0.75rem;
+}
+
+.timeline-section p:last-of-type {
+  font-size: 1rem;
+  color: #1f1f1f;
+  margin-bottom: 1rem;
+  line-height: 1.5;
 }

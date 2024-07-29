@@ -46,7 +46,7 @@
 .portfolio-card {
   opacity: 0; /* Start hidden */
   transform: translateY(50px); /* Start off-screen */
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Smooth transition */
+  transition: opacity 1.5s ease-out, transform 0.1s ease-out; /* Smooth transition */
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;

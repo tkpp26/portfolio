@@ -61,21 +61,21 @@
   width: 35%;
 }
 
-.timeline-section {
+.education-timeline-section {
   margin: 0 auto;
 }
 
-.timeline-section ol {
+.education-timeline-section ol {
   list-style: none;
   padding: 0;
 }
 
-.timeline-section li {
+.education-timeline-section li {
   position: relative;
   padding-left: 2rem;
 }
 
-.timeline-section li::before {
+.education-timeline-section li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -87,16 +87,4 @@
 
 .timeline-section .absolute {
   position: absolute;
-}
-
-.timeline-section .text-blue-300 {
-  color: #4a5568; /* Adjust to your theme */
-}
-
-.timeline-section .text-gray-500 {
-  color: #4a5568; /* Adjust to your theme */
-}
-
-.timeline-section .text-gray-400 {
-  color: #4a5568; /* Adjust to your theme */
 }

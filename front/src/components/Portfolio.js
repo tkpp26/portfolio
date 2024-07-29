@@ -58,6 +58,7 @@ export default function Portfolio() {
 
   return (
     <div
+      id="portfolio"
       className={`portfolio-container ${visibleContainer ? "visible" : ""}`}
       ref={containerRef}
     >
