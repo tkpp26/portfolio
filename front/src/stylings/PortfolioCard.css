@@ -1,0 +1,63 @@
+/* PortfolioCard.css */
+.portfolio-card {
+  opacity: 0; /* Start hidden */
+  transform: translateY(50px); /* Start off-screen */
+  transition: opacity 1.5s ease-out, transform 0.5s ease-out,
+    box-shadow 0.5s ease-out; /* Faster transitions */
+  background-color: white;
+  width: 80%; /* Adjust width for one card per row */
+  height: 400px; /* Fixed height for each card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  margin: 1rem 0; /* Optional: Adjust margin to fine-tune spacing */
+}
+
+.portfolio-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portfolio-card-image {
+  width: 40%;
+  height: auto;
+  object-fit: cover;
+  border-right: 1px solid #e2e2e2;
+  border-radius: 8px 0 0 8px;
+}
+
+.portfolio-card-description {
+  padding: 1rem;
+  width: 60%;
+}
+
+.portfolio-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #f9f9f9;
+}
+
+@media (max-width: 768px) {
+  .portfolio-card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-card {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .portfolio-card-image,
+  .portfolio-card-description {
+    width: 100%;
+  }
+
+  .portfolio-card-image {
+    border-right: none;
+    border-radius: 8px 8px 0 0;
+  }
+}

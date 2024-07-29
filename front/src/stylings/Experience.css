@@ -1,0 +1,23 @@
+.experience-section {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  background-color: #f9f9f9;
+}
+
+.timeline-section {
+  margin-top: 2rem;
+}
+
+.timeline-section ol {
+  list-style-type: none;
+}
+
+.timeline-section li {
+  position: relative;
+}
+
+.timeline-section span {
+  position: absolute;
+  left: -1.5rem;
+}

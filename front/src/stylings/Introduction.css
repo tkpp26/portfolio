@@ -1,0 +1,43 @@
+/* Introduction.css */
+.introduction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh; /* Full viewport height */
+  background-color: #ffffff;
+  padding: 1rem;
+}
+
+.card {
+  opacity: 0; /* Start hidden */
+  transform: translateY(50px); /* Start off-screen */
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Smooth transition */
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* When card is visible */
+.card.visible {
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Slide up */
+}
+
+/* Optional: Add a slight scale effect for more emphasis */
+.card.visible {
+  opacity: 1; /* Ensure full opacity */
+  transform: translateY(0) scale(1.05); /* Slide up and slightly scale up */
+}
+
+.card h1 {
+  font-size: 2.5rem;
+  white-space: nowrap; /* Ensure text does not wrap */
+  margin: 0; /* Remove default margins */
+}

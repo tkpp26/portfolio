@@ -1,0 +1,25 @@
+.progress-bar {
+  margin: 1rem 0;
+  width: 100%;
+}
+
+.progress-bar-language {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.progress-bar-container {
+  width: 100%;
+  background-color: #e9e9e9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 20px;
+  background-color: #8ccdc9;
+  width: 0; /* Start at 0 width */
+  border-radius: 10px 0 0 10px;
+  transition: width 2s ease-in-out; /* Smooth animation */
+}

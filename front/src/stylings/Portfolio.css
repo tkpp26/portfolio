@@ -1,0 +1,90 @@
+/* Container styles */
+.portfolio-container {
+  background-color: #ffffff; /* Light background */
+  padding: 2rem; /* Padding around the container */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Box shadow */
+  opacity: 0; /* Start hidden */
+  transform: translateY(50px); /* Start off-screen */
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Smooth transition */
+  margin: 0 auto;
+  width: 100vw;
+}
+
+/* Visible state */
+.portfolio-container.visible {
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Slide up */
+}
+
+/* Portfolio styles */
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  align-items: center; /* Center the cards vertically if needed */
+}
+
+/* Portfolio heading styles */
+.portfolio-heading {
+  display: flex; /* Make it a flex container */
+  flex-direction: column; /* Stack child elements vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  text-align: center; /* Center text inside */
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+/* Adjust grid layout for small screens */
+@media (max-width: 768px) {
+  .portfolio {
+    grid-template-columns: 1fr; /* 1 column on small screens */
+  }
+}
+
+/* Card styles */
+.portfolio-card {
+  opacity: 0; /* Start hidden */
+  transform: translateY(50px); /* Start off-screen */
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Smooth transition */
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: 100%; /* Ensure full height of grid cell */
+  margin: 1rem;
+}
+
+.portfolio-card.visible {
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Slide up */
+}
+
+.portfolio-card img {
+  width: 40%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portfolio-description {
+  padding: 1rem;
+  width: 60%;
+}
+
+.portfolio-description h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-description p {
+  font-size: 1rem;
+}
+
+/* Hover effect */
+.portfolio-card:hover {
+  transform: scale(1.05); /* Zoom effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background-color: #f9f9f9;
+}

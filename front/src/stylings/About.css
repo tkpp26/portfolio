@@ -1,0 +1,102 @@
+.about-container {
+  background-color: #ffffff; /* Light blue background */
+  padding: 2rem; /* Add padding around the container */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.065); /* Box shadow */
+  opacity: 0; /* Start hidden */
+  transform: translateY(50px); /* Start off-screen */
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Smooth transition */
+}
+
+.about-container.visible {
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Slide up */
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.about-sections {
+  width: 50%;
+}
+
+.about-section {
+  margin-bottom: 2rem; /* Adjust the margin as needed for equal spacing */
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.about-card {
+  width: 100%;
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.about-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-section:last-child {
+  margin-bottom: 0;
+}
+
+.about-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.skills-container {
+  width: 35%;
+}
+
+.timeline-section {
+  margin: 0 auto;
+}
+
+.timeline-section ol {
+  list-style: none;
+  padding: 0;
+}
+
+.timeline-section li {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline-section li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0.5rem;
+  height: 100%;
+  background-color: #4a5568; /* Adjust to your theme */
+}
+
+.timeline-section .absolute {
+  position: absolute;
+}
+
+.timeline-section .text-blue-300 {
+  color: #4a5568; /* Adjust to your theme */
+}
+
+.timeline-section .text-gray-500 {
+  color: #4a5568; /* Adjust to your theme */
+}
+
+.timeline-section .text-gray-400 {
+  color: #4a5568; /* Adjust to your theme */
+}

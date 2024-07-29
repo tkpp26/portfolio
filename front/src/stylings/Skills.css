@@ -1,0 +1,22 @@
+.skills-container {
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  opacity: 0; /* Start hidden */
+  transform: translateY(50px); /* Start off-screen */
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Smooth transition */
+  width: 30%; /* Adjust width as needed */
+  margin-right: 2rem;
+}
+
+.skills-container.visible {
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Slide up */
+}
+
+.skills-container h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  text-align: center;
+}

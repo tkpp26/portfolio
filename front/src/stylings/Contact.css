@@ -1,0 +1,59 @@
+.contact-container {
+  background-color: #ffffff; /* Light background */
+  padding: 2rem; /* Padding around the container */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Box shadow */
+  opacity: 0; /* Start hidden */
+  transform: translateY(50px); /* Start off-screen */
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Smooth transition */
+}
+
+.contact-container.visible {
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Slide up */
+}
+
+.contact-card {
+  width: 80%;
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: auto; /* Center the card horizontally */
+}
+
+.contact-card h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-card label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.contact-card input,
+.contact-card textarea {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-card button {
+  background-color: #ffffff;
+  color: black; /* Change text color to black */
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.contact-card button:hover {
+  background-color: #f0f0f0;
+}
