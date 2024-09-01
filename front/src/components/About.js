@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Skills from "./Skills";
+import Technologies from "./Technologies";
 import "../stylings/About.css";
 
 export default function About() {

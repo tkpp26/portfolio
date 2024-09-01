@@ -55,7 +55,7 @@ export default function Experience() {
       role: "Software Engineer Fellow",
       duration: "July 2024 - September 2024",
       description:
-        "During my internship at Headstarter, I worked on various web development projects, gaining valuable experience in front-end technologies and collaborating with a team of developers.",
+        "I engaged in weekly projects to learn and apply various frameworks and tools, including AWS, Firebase, and Next.js. I actively participated in weekly coding interview sessions, where I achieved a highest score of 80%. Notably, I conducted a sentiment analysis project on `Rate My Professor` to evaluate student feedback, which involved exploring and implementing various classification algorithms to enhance model performance for sentiment classification.",
     },
     {
       id: "experience2",
@@ -63,7 +63,7 @@ export default function Experience() {
       role: "Software Engineer Intern",
       duration: "August 2023 - October 2023",
       description:
-        "At Kasanare Corporation, I gained hands-on experience in front-end development, working closely with the team to implement features and enhance the user experience.",
+        "I was responsible for enhancing the chatbot's accuracy by refining user query inputs and incorporating prompt engineering methods, such as Zero-Shot prompting and Chain-Of-Thought prompting. Additionally, I conducted repeated vector searches of the dataset using Pinecone and Langchain’s agents and custom tools. I also implemented chatbot memory and improved the customer experience through sentiment analysis using OpenAI API.",
     },
   ];
 
