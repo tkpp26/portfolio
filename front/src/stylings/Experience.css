@@ -1,3 +1,4 @@
+/* General Section Styling */
 .experience-section {
   display: flex;
   justify-content: center;
@@ -12,6 +13,7 @@
   transform: translateY(0);
 }
 
+/* Container Styling */
 .wrapper-container {
   width: 90%;
   margin: 2rem;
@@ -21,12 +23,14 @@
   border-radius: 8px; /* Optional: adds rounded corners */
 }
 
+/* Header Styling */
 .wrapper-container h1 {
   font-size: 3rem;
   margin-bottom: 0.5rem;
   text-align: center;
 }
 
+/* Timeline Section Styling */
 .timeline-section {
   position: relative; /* Ensure the line is positioned correctly */
 }
@@ -46,12 +50,14 @@
   background-color: #4a5568; /* Color of the vertical line */
 }
 
+/* Timeline Item Styling */
 .timeline-section li {
   position: relative;
   padding-left: 1.5rem;
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 1s ease-out, transform 1s ease-out;
+  margin-bottom: 2rem;
 }
 
 .timeline-section li.visible {
@@ -64,6 +70,7 @@
   left: -1.5rem;
 }
 
+/* Item Header Styling */
 .timeline-section h3 {
   font-size: 1.25rem;
   font-weight: 600;
@@ -71,12 +78,14 @@
   margin-bottom: 0.5rem;
 }
 
+/* Role and Duration Styling */
 .timeline-section p:first-of-type {
   font-size: 1rem;
   color: #1f1f1f;
   margin-bottom: 0.5rem;
 }
 
+/* Time Element Styling */
 .timeline-section time {
   font-size: 1rem;
   font-weight: 400;
@@ -85,6 +94,7 @@
   padding-bottom: 0.75rem;
 }
 
+/* Description Styling */
 .timeline-section p:last-of-type {
   font-size: 1rem;
   color: #1f1f1f;
