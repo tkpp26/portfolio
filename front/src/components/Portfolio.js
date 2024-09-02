@@ -17,9 +17,6 @@ export default function Portfolio() {
   const projects = [
     {
       title: "Spotify Recommendation",
-      github: "https://github.com/yourusername/spotify-recommendation",
-      demo: "https://yourdemo.com/spotify-recommendation",
-      website: "https://yourwebsite.com/spotify-recommendation",
       description:
         "An application that recommends music based on user preferences.",
     },
@@ -50,7 +47,6 @@ export default function Portfolio() {
     {
       title: "NewsWeb",
       github: "https://github.com/tkpp26/newsWeb",
-      demo: "https://yourdemo.com/news-web",
       description:
         "A web application for aggregating and displaying news articles.",
     },
