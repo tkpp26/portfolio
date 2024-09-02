@@ -1,19 +1,18 @@
-/* Introduction.css */
 .introduction {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh; /* Full viewport height */
-  background-color: #ffffff;
-  padding: 1rem;
+  height: 100vh; /* Full viewport height */
+  background-color: rgb(255, 255, 255);
+  flex-direction: column; /* Stack the card and links-container vertically */
 }
 
 .card {
   opacity: 0; /* Start hidden */
   transform: translateY(50px); /* Start off-screen */
   transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Smooth transition */
-  width: 80%;
-  height: 80%;
+  width: 80%; /* Equal width for both card and links-card */
+  height: 60%;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -22,17 +21,12 @@
   padding: 2rem;
   border-radius: 10px;
   overflow: hidden;
+  margin-bottom: 2rem;
 }
 
 /* When card is visible */
 .card.visible {
   opacity: 1; /* Fade in */
-  transform: translateY(0); /* Slide up */
-}
-
-/* Optional: Add a slight scale effect for more emphasis */
-.card.visible {
-  opacity: 1; /* Ensure full opacity */
   transform: translateY(0) scale(1.05); /* Slide up and slightly scale up */
 }
 
@@ -40,4 +34,86 @@
   font-size: 2.5rem;
   white-space: nowrap; /* Ensure text does not wrap */
   margin: 0; /* Remove default margins */
+}
+
+/* Links Container Styling */
+.links-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  width: 100vw;
+}
+
+.links-card {
+  width: 80%; /* Equal width for both card and links-card */
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row; /* Ensure items stack vertically */
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* When links-card is visible */
+.links-card.visible {
+  opacity: 1; /* Fade in */
+  transform: translateY(0) scale(1.05); /* Slide up and slightly scale up */
+}
+
+/* Styling for the links */
+.links {
+  display: flex;
+  flex-direction: row; /* Stack links vertically */
+  gap: 1rem; /* Add space between the links */
+}
+
+.links a {
+  text-decoration: none;
+  color: #0073b1; /* Link color */
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #005582; /* Darken color on hover */
+}
+
+.icon {
+  margin-right: 8px;
+  font-size: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card,
+  .links-card {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .links a {
+    font-size: 1rem;
+  }
+
+  .icon {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card,
+  .links-card {
+    padding: 0.5rem;
+  }
+
+  .links a {
+    font-size: 0.9rem;
+  }
 }
