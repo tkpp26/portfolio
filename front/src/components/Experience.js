@@ -55,7 +55,7 @@ export default function Experience() {
       role: "Software Engineer Fellow",
       duration: "July 2024 - September 2024",
       description:
-        "I engaged in weekly projects to learn and apply various frameworks and tools, including AWS, Firebase, and Next.js. I actively participated in weekly coding interview sessions, where I achieved a highest score of 80%. Notably, I conducted a sentiment analysis project on `Rate My Professor` to evaluate student feedback, which involved exploring and implementing various classification algorithms to enhance model performance for sentiment classification.",
+        "I engaged in weekly projects to learn and apply various frameworks and tools, including AWS, Firebase, and Next.js.",
     },
     {
       id: "experience2",

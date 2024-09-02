@@ -50,7 +50,7 @@ export default function Introduction() {
   }, []);
 
   return (
-    <div className="introduction">
+    <div id="intro" className="introduction">
       <div ref={cardRef} className={`card ${isVisible ? "visible" : ""}`}>
         <h1 ref={typingRef}></h1> {/* Ref to access the h1 element */}
       </div>

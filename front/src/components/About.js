@@ -100,6 +100,7 @@ export default function About() {
                           to Machine Learning
                         </p>
                       </li>
+                      <br></br>
                       <li className="mb-10" data-aos="zoom-in">
                         <h3 className="mb-1 text-lg font-semibold text-white">
                           Diablo Valley College

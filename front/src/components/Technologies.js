@@ -4,23 +4,31 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPython,
   faJsSquare,
-  faJava,
   faCss3Alt,
   faHtml5,
   faReact,
   faNodeJs,
   faDocker,
+  faGitAlt,
 } from "@fortawesome/free-brands-svg-icons";
+import {
+  faDatabase,
+  faFlask,
+  faCodeBranch,
+  faServer,
+} from "@fortawesome/free-solid-svg-icons";
 import "../stylings/Technologies.css";
 
 const technologies = [
   { name: "Python", icon: faPython },
   { name: "JavaScript", icon: faJsSquare },
+  { name: "SQL", icon: faDatabase },
   { name: "React", icon: faReact },
-  { name: "Node.js", icon: faNodeJs },
-  { name: "Docker", icon: faDocker },
   { name: "HTML5", icon: faHtml5 },
   { name: "CSS3", icon: faCss3Alt },
+  { name: "Node.js", icon: faNodeJs },
+  { name: "Docker", icon: faDocker },
+  { name: "Git", icon: faGitAlt },
 ];
 
 const Technologies = () => {
