@@ -41,7 +41,7 @@ export default function Portfolio() {
     },
     {
       title: "Diabetes Classification",
-      github: "https://github.com/yourusername/diabetes-classification",
+      github: "https://github.com/tkpp26/Diabetes-Classification",
       colab:
         "https://colab.research.google.com/drive/1csXvpUAIGlWY8na0sDJoLn-MRuGZwIjY?usp=sharing",
       description:
