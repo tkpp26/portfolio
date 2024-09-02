@@ -11,17 +11,16 @@ import {
   faNodeJs,
   faDocker,
 } from "@fortawesome/free-brands-svg-icons";
-import "../stylings/Skills.css";
+import "../stylings/Technologies.css";
 
 const technologies = [
+  { name: "Python", icon: faPython },
+  { name: "JavaScript", icon: faJsSquare },
   { name: "React", icon: faReact },
   { name: "Node.js", icon: faNodeJs },
   { name: "Docker", icon: faDocker },
   { name: "HTML5", icon: faHtml5 },
   { name: "CSS3", icon: faCss3Alt },
-  { name: "JavaScript", icon: faJsSquare },
-  { name: "Python", icon: faPython },
-  // Add more technologies as needed
 ];
 
 const Technologies = () => {
@@ -57,7 +56,7 @@ const Technologies = () => {
       className={`tech-icons-container ${visibleContainer ? "visible" : ""}`}
       ref={containerRef}
     >
-      <h2>Technologies</h2>
+      <h1>Technologies</h1>
       <div className="tech-icons">
         {technologies.map((tech, index) => (
           <div key={index} className="tech-icon">

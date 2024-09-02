@@ -1,4 +1,7 @@
+/* Overall container */
 .about-container {
+  display: flex;
+  justify-content: center;
   background-color: #ffffff; /* Light blue background */
   padding: 2rem; /* Add padding around the container */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.065); /* Box shadow */
@@ -12,17 +15,29 @@
   transform: translateY(0); /* Slide up */
 }
 
+/* Content container */
 .about-content {
-  display: flex;
-  justify-content: space-around;
+  width: 95%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+  gap: 2rem;
+  align-items: stretch;
+  background-color: rgba(0, 255, 255, 0); /* For debugging */
 }
 
+/* About & Education */
 .about-sections {
-  width: 50%;
+  background-color: rgba(255, 0, 0, 0); /* For debugging */
 }
 
+/* Technical Skills */
+.technical-skills {
+  background-color: rgba(0, 0, 255, 0); /* For debugging */
+}
+
+/* Each section */
 .about-section {
-  margin-bottom: 2rem; /* Adjust the margin as needed for equal spacing */
+  margin-bottom: 2rem;
   display: flex;
   justify-content: center;
   opacity: 0;
@@ -55,10 +70,6 @@
 .about-section p {
   font-size: 1rem;
   line-height: 1.5;
-}
-
-.skills-container {
-  width: 35%;
 }
 
 .education-timeline-section {

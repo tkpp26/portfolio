@@ -1,4 +1,4 @@
-.skills-container {
+.tech-icons-container {
   padding: 2rem;
   background-color: #ffffff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -8,15 +8,29 @@
   transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Smooth transition */
   width: 100%; /* Ensure full width of grid cell */
   margin-right: 0; /* Remove margin to avoid spacing issues */
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
-.skills-container.visible {
+.tech-icons-container h1 {
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.tech-icons-container.visible {
   opacity: 1; /* Fade in */
   transform: translateY(0); /* Slide up */
 }
 
-.skills-container h2 {
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
-  text-align: center;
+.tech-icons {
+  display: flex;
+  flex-direction: row; /* Stack children horizontally */
+  gap: 1rem; /* Space between icons */
+  justify-content: center;
+}
+
+.tech-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
