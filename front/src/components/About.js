@@ -73,8 +73,8 @@ export default function About() {
                 <h2>{title}</h2>
                 {title === "About Me" && (
                   <p>
-                    Hello! I'm Shizuka, an incoming transfer student at the
-                    University of California, Irvine, majoring in Computer
+                    Hello! I'm Shizuka Takao, an incoming transfer student at
+                    the University of California, Irvine, majoring in Computer
                     Science. I've had the opportunity to intern with
                     Retrieval-Augmented Generation (RAG) and am currently
                     delving into web development and machine learning. Recently,
