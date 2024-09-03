@@ -24,7 +24,6 @@ export default function Portfolio() {
       title: "Clothing Recommender",
       github: "https://github.com/khmorad/clothingRecommendationApp/tree/main",
       demo: "https://www.youtube.com/watch?v=P2Y8-JbCPIk",
-      website: "https://yourwebsite.com/spotify-recommendation",
       description:
         "Designed to help users discover clothing items that are similar to their favorite clothing items.",
     },
