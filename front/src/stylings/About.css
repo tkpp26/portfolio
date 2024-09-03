@@ -2,17 +2,17 @@
 .about-container {
   display: flex;
   justify-content: center;
-  background-color: #ffffff; /* Light blue background */
-  padding: 2rem; /* Add padding around the container */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.065); /* Box shadow */
-  opacity: 0; /* Start hidden */
-  transform: translateY(50px); /* Start off-screen */
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Smooth transition */
+  background-color: #ffffff;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.065);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
 .about-container.visible {
-  opacity: 1; /* Fade in */
-  transform: translateY(0); /* Slide up */
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Content container */
@@ -22,7 +22,6 @@
   grid-template-columns: repeat(2, 1fr); /* Two equal columns */
   gap: 2rem;
   align-items: stretch;
-  background-color: rgba(0, 255, 255, 0); /* For debugging */
 }
 
 /* About & Education */
@@ -93,9 +92,89 @@
   top: 0;
   width: 0.5rem;
   height: 100%;
-  background-color: #4a5568; /* Adjust to your theme */
+  background-color: #4a5568;
 }
 
-.timeline-section .absolute {
-  position: absolute;
+/* Media Queries for Responsiveness */
+
+/* Medium screens (tablets, small laptops) */
+@media (max-width: 1024px) {
+  .about-content {
+    grid-template-columns: 1fr; /* Stack columns vertically */
+  }
+
+  .about-card {
+    padding: 1.5rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-section p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Small screens (mobile devices) */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 1rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr; /* Stack columns vertically */
+    gap: 1.5rem;
+  }
+
+  .about-card {
+    padding: 1.5rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-section p {
+    font-size: 0.9rem;
+  }
+
+  .education-timeline-section li {
+    padding-left: 1.5rem;
+  }
+
+  .education-timeline-section li::before {
+    width: 0.35rem;
+  }
+}
+
+/* Extra small screens (very small mobile devices) */
+@media (max-width: 480px) {
+  .about-container {
+    padding: 0.5rem;
+  }
+
+  .about-content {
+    gap: 1rem;
+  }
+
+  .about-card {
+    padding: 1rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .about-section p {
+    font-size: 0.85rem;
+  }
+
+  .education-timeline-section li {
+    padding-left: 1rem;
+  }
+
+  .education-timeline-section li::before {
+    width: 0.25rem;
+  }
 }
