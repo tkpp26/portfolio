@@ -3,11 +3,11 @@ import ProgressBar from "./ProgressBar";
 import "../stylings/Skills.css";
 
 const skills = [
-  { language: "Python", level: 90 },
-  { language: "SQL", level: 80 },
-  { language: "JavaScript", level: 70 },
-  { language: "C++", level: 70 },
-  { language: "Java", level: 50 },
+  { language: "Python", level: 70 },
+  { language: "SQL", level: 60 },
+  { language: "JavaScript", level: 60 },
+  { language: "C++", level: 60 },
+  { language: "Java", level: 20 },
   // Add more skills as needed
 ];
 
