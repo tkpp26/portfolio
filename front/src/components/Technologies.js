@@ -21,8 +21,8 @@ import "../stylings/Technologies.css";
 
 const technologies = [
   { name: "Python", icon: faPython },
-  { name: "JavaScript", icon: faJsSquare },
   { name: "SQL", icon: faDatabase },
+  { name: "JavaScript", icon: faJsSquare },
   { name: "React", icon: faReact },
   { name: "HTML5", icon: faHtml5 },
   { name: "CSS3", icon: faCss3Alt },

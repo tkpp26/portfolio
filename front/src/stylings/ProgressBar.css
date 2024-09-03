@@ -18,7 +18,7 @@
 
 .progress-bar-fill {
   height: 20px;
-  background-color: #93d6d1e3;
+  background-color: #93d6d1d3;
   width: 0; /* Start at 0 width */
   border-radius: 10px 0 0 10px;
   transition: width 2s ease-in-out; /* Smooth animation */

@@ -67,13 +67,13 @@
 /* Styling for the links */
 .links {
   display: flex;
-  flex-direction: row; /* Stack links vertically */
-  gap: 1rem; /* Add space between the links */
+  flex-direction: row;
+  gap: 1rem;
 }
 
 .links a {
   text-decoration: none;
-  color: #0073b1; /* Link color */
+  color: #0e9ce8e3;
   font-size: 1.2rem;
   display: flex;
   align-items: center;
@@ -81,7 +81,7 @@
 }
 
 .links a:hover {
-  color: #005582; /* Darken color on hover */
+  color: #005582;
 }
 
 .icon {
