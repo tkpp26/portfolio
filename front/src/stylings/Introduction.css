@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh; /* Full viewport height */
+  width: 100vw;
   background-color: rgb(255, 255, 255);
   flex-direction: column; /* Stack the card and links-container vertically */
 }
@@ -93,8 +94,7 @@
 @media (max-width: 768px) {
   .card,
   .links-card {
-    width: 100%;
-    height: auto;
+    width: 80%;
     padding: 1rem;
   }
 
@@ -108,9 +108,13 @@
 }
 
 @media (max-width: 480px) {
-  .card,
+  .card {
+    width: 80%;
+    background-color: red;
+  }
   .links-card {
-    padding: 0.5rem;
+    width: 50%;
+    background-color: blue;
   }
 
   .links a {

@@ -5,29 +5,27 @@ import { faFileAlt } from "@fortawesome/free-solid-svg-icons";
 import "../stylings/Introduction.css";
 
 export default function Introduction() {
-  const [index, setIndex] = useState(0); // State to track the index
-  const [isVisible, setIsVisible] = useState({ card: false, linksCard: false }); // State to track visibility
-  const typingRef = useRef(null); // Reference to the h1 element
-  const cardRef = useRef(null); // Reference to the card element
-  const linksCardRef = useRef(null); // Reference to the links card element
-  const text = "Hi, I'm Shizuka"; // Text to display
+  const [index, setIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState({ card: false, linksCard: false });
+  const typingRef = useRef(null);
+  const cardRef = useRef(null);
+  const linksCardRef = useRef(null);
+  const text = "Hi, I'm Shizuka";
 
   useEffect(() => {
-    // Typing function
     const type = () => {
       if (index < text.length) {
-        typingRef.current.textContent += text.charAt(index); // Append next character
-        setIndex((prevIndex) => prevIndex + 1); // Increment index
+        typingRef.current.textContent += text.charAt(index);
+        setIndex((prevIndex) => prevIndex + 1);
       }
     };
 
-    const typingTimeout = setTimeout(type, 100); // Call type function after delay
+    const typingTimeout = setTimeout(type, 100);
 
-    // Cleanup function
     return () => {
-      clearTimeout(typingTimeout); // Clear the timeout if component unmounts
+      clearTimeout(typingTimeout);
     };
-  }, [index]); // Depend on index to update the effect
+  }, [index]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -40,7 +38,7 @@ export default function Introduction() {
             } else if (target === linksCardRef.current) {
               setIsVisible((prev) => ({ ...prev, linksCard: true }));
             }
-            observer.unobserve(target); // Optionally stop observing after becoming visible
+            observer.unobserve(target);
           }
         });
       },
@@ -72,7 +70,6 @@ export default function Introduction() {
         </div>
       </div>
 
-      {/* Links Container inside Introduction */}
       <div
         ref={linksCardRef}
         className={`links-container ${isVisible.linksCard ? "visible" : ""}`}
