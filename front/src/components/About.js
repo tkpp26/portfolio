@@ -73,15 +73,22 @@ export default function About() {
                 <h2>{title}</h2>
                 {title === "About Me" && (
                   <p>
-                    Hello! I'm Shizuka Takao, an incoming transfer student at
-                    the University of California, Irvine, majoring in Computer
-                    Science. I've had the opportunity to intern with
-                    Retrieval-Augmented Generation (RAG) and am currently
-                    delving into web development and machine learning. Recently,
-                    I've been learning to build neural networks, especially
-                    Convolutional Neural Networks (CNNs) for image
-                    classification. I'm looking forward to connecting with
-                    everyone and sharing our journeys!
+                    Hello! I'm Shizuka, an incoming transfer student at the
+                    University of California, Irvine, majoring in Computer
+                    Science. I've had the opportunity to intern using
+                    Retrieval-Augmented Generation (RAG) and am currently diving
+                    into web development and machine learning. Recently, I’ve
+                    been working on a Clothing Recommendation web app that
+                    utilizes machine learning techniques, specifically
+                    Convolutional Neural Networks (CNNs), to analyze
+                    user-uploaded images and recommend similar clothing items.
+                    Currently, I am learning to implement image segmentation and
+                    masking techniques to improve the app's ability to handle
+                    various backgrounds. In addition to this, I’m developing a
+                    music recommendation app where I aim to analyze audio
+                    spectrograms and integrate this with CSV data from Kaggle to
+                    enhance the recommendation accuracy. Looking forward to
+                    connecting with everyone and sharing our journeys!
                   </p>
                 )}
                 {title === "Education" && (
@@ -96,8 +103,7 @@ export default function About() {
                           September 2024 - Present
                         </time>
                         <p className="mb-4 text-base font-normal text-gray-400">
-                          Relevant Coursework: Database Management, Introduction
-                          to Machine Learning
+                          Relevant Coursework:
                         </p>
                       </li>
                       <br></br>
