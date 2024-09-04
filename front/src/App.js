@@ -1,11 +1,13 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Route, Routes } from "react-router-dom";
+import { HelmetProvider, Helmet } from "react-helmet-async";
 import Home from "./components/Home";
 
 function App() {
+  console.log(process.env.REACT_APP_API_KEY);
+
   return (
-    <Router>
+    <HelmetProvider>
       <Helmet>
         <title>Shizuka Takao - Personal Website</title>
         <meta
@@ -16,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
-    </Router>
+    </HelmetProvider>
   );
 }
 
