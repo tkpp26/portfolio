@@ -17,8 +17,12 @@ export default function Portfolio() {
   const projects = [
     {
       title: "Spotify Recommendation",
-      description:
-        "An application that recommends music based on user preferences.",
+      description: (
+        <>
+          An application that recommends music based on user preferences.{" "}
+          <em>(In progress)</em>
+        </>
+      ),
     },
     {
       title: "Clothing Recommender",
