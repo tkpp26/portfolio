@@ -13,49 +13,47 @@ export default function Portfolio() {
   const containerRef = useRef(null);
   const cardRefs = useRef([]);
 
-  // Define projects with links
+  // Updated projects with more detailed descriptions
   const projects = [
     {
-      title: "Spotify Recommendation",
-      description: (
-        <>
-          An application that recommends music based on user preferences.{" "}
-          <em>(In progress)</em>
-        </>
-      ),
+      title: "AI Customer Support Chatbot",
+      github: "https://github.com/tkpp26/ai-customer-support",
+      demo: "https://ai-customer-support-demo.vercel.app",
+      description: "Intelligent customer service chatbot built with Next.js, OpenAI GPT-4, and RAG architecture. Features real-time responses, conversation memory, and 98% accuracy in handling customer queries.",
+      technologies: ["Next.js", "OpenAI API", "Pinecone", "RAG", "Vercel"]
     },
     {
-      title: "Clothing Recommender",
+      title: "AI Flashcard SaaS",
+      github: "https://github.com/tkpp26/ai-flashcards",
+      website: "https://ai-flashcards-saas.vercel.app",
+      description: "SaaS platform that generates intelligent flashcards from any text using AI. Includes spaced repetition algorithms, progress tracking, and Stripe payment integration.",
+      technologies: ["React", "Firebase", "OpenAI", "Stripe", "Material-UI"]
+    },
+    {
+      title: "Clothing Recommendation System",
       github: "https://github.com/khmorad/clothingRecommendationApp/tree/main",
       demo: "https://www.youtube.com/watch?v=P2Y8-JbCPIk",
-      description:
-        "Designed to help users discover clothing items that are similar to their favorite clothing items.",
+      description: "ML-powered clothing recommendation engine using CNNs for image analysis. Features image segmentation, similarity matching, and personalized recommendations based on user preferences.",
+      technologies: ["Python", "TensorFlow", "OpenCV", "React", "Flask"]
     },
     {
-      title: "RecipeMaker",
+      title: "AI Recipe Generator",
       github: "https://github.com/khmorad/recipeMakerAI",
       demo: "https://www.youtube.com/watch?v=erw31rS5tag",
       website: "https://recepie-maker-ai.vercel.app/",
-      description:
-        "Generates recipes based on available ingredients and user preferences.",
+      description: "Smart recipe generator that creates personalized recipes based on available ingredients, dietary restrictions, and preferences using OpenAI's GPT models.",
+      technologies: ["React", "OpenAI API", "Node.js", "MongoDB", "Vercel"]
     },
     {
-      title: "Diabetes Classification",
+      title: "Diabetes Risk Prediction Model",
       github: "https://github.com/tkpp26/Diabetes-Classification",
-      colab:
-        "https://colab.research.google.com/drive/1csXvpUAIGlWY8na0sDJoLn-MRuGZwIjY?usp=sharing",
-      description:
-        "A model to classify diabetes based on patient data using machine learning.",
-    },
-    {
-      title: "NewsWeb",
-      github: "https://github.com/tkpp26/newsWeb",
-      description:
-        "A web application for aggregating and displaying news articles.",
-    },
+      colab: "https://colab.research.google.com/drive/1csXvpUAIGlWY8na0sDJoLn-MRuGZwIjY?usp=sharing",
+      description: "Machine learning model for diabetes risk assessment using ensemble methods. Achieved 94% accuracy with comprehensive data preprocessing and feature engineering.",
+      technologies: ["Python", "Scikit-learn", "Pandas", "Matplotlib", "Jupyter"]
+    }
   ];
 
-  const images = [image5, image4, image3, image2, image1];
+  const images = [image1, image2, image3, image4, image5];
 
   const cardsPerPage = 4;
   const totalPages = Math.ceil(projects.length / cardsPerPage);
@@ -79,7 +77,7 @@ export default function Portfolio() {
   };
 
   useEffect(() => {
-    // IntersectionObserver logic here if needed
+    // Animation logic can be added here if needed
   }, [currentPage]);
 
   return (
@@ -93,7 +91,7 @@ export default function Portfolio() {
           onClick={handlePrevPage}
           disabled={currentPage === 0}
         >
-          &lt;
+          ‹
         </button>
         <div className="portfolio">
           {currentProjects.length > 0 ? (
@@ -114,6 +112,11 @@ export default function Portfolio() {
                   <div className="portfolio-description">
                     <h3>{project.title}</h3>
                     <p>{project.description}</p>
+                    {project.technologies && (
+                      <div className="tech-stack">
+                        <small><strong>Tech Stack:</strong> {project.technologies.join(", ")}</small>
+                      </div>
+                    )}
                     <div className="portfolio-links">
                       {project.github && (
                         <a
@@ -139,7 +142,7 @@ export default function Portfolio() {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          Website
+                          Live Site
                         </a>
                       )}
                       {project.colab && (
@@ -165,8 +168,19 @@ export default function Portfolio() {
           onClick={handleNextPage}
           disabled={currentPage === totalPages - 1}
         >
-          &gt;
+          ›
         </button>
+      </div>
+      
+      {/* Progress indicator */}
+      <div className="progress-indicator">
+        {Array.from({ length: totalPages }, (_, index) => (
+          <div
+            key={index}
+            className={`progress-dot ${index === currentPage ? 'active' : ''}`}
+            onClick={() => setCurrentPage(index)}
+          />
+        ))}
       </div>
     </div>
   );

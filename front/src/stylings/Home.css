@@ -1,4 +1,31 @@
 /* Home.css */
+:root {
+  --primary-pink: #f8d7da;
+  --soft-pink: #fce4ec;
+  --sage-green: #a8d5ba;
+  --mint-green: #e8f5e8;
+  --soft-blue: #e3f2fd;
+  --warm-white: #fefefe;
+  --text-dark: #2c3e50;
+  --text-light: #5a6c7d;
+  --shadow-light: rgba(0, 0, 0, 0.08);
+  --shadow-medium: rgba(0, 0, 0, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: linear-gradient(135deg, var(--warm-white) 0%, var(--soft-pink) 50%, var(--mint-green) 100%);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
 .element {
   opacity: 0;
   transition: opacity 1s ease-in-out;
@@ -8,11 +35,72 @@
   opacity: 1;
 }
 
-/* Ensure the container has enough height or padding */
+/* Floating elements for peaceful ambiance */
+.floating-elements {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.floating-star,
+.floating-flower,
+.floating-clover {
+  position: absolute;
+  opacity: 0.3;
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-star {
+  color: #ffd700;
+  font-size: 1.2rem;
+}
+
+.floating-flower {
+  color: var(--primary-pink);
+  font-size: 1.5rem;
+}
+
+.floating-clover {
+  color: var(--sage-green);
+  font-size: 1.3rem;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* Section spacing */
 .introduction,
 .about,
-.portfolio,
-.contact {
-  min-height: 70vh; /* Adjust as needed */
+.experience,
+.portfolio {
+  min-height: 100vh;
   padding: 2rem;
+  position: relative;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Gentle animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
 }

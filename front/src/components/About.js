@@ -1,6 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import Skills from "./Skills";
-import Technologies from "./Technologies";
 import "../stylings/About.css";
 
 export default function About() {
@@ -50,6 +48,13 @@ export default function About() {
     };
   }, []);
 
+  const skills = [
+    "Python", "JavaScript", "React", "Node.js", "SQL", "MongoDB", 
+    "TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy",
+    "AWS", "Docker", "Git", "REST APIs", "Machine Learning",
+    "Data Analysis", "Computer Vision", "NLP"
+  ];
+
   return (
     <div
       id="about"
@@ -60,76 +65,78 @@ export default function About() {
     >
       <div className="about-content">
         <div className="about-sections">
-          {["About Me", "Education"].map((title, index) => (
-            <div
-              key={index}
-              className={`about-section ${
-                visibleSections[`section${index}`] ? "visible" : ""
-              }`}
-              ref={(el) => (aboutRefs.current[index] = el)}
-              id={`section${index}`}
-            >
-              <div className="about-card">
-                <h2>{title}</h2>
-                {title === "About Me" && (
-                  <p>
-                    Hello! I'm Shizuka, an incoming transfer student at the
-                    University of California, Irvine, majoring in Computer
-                    Science. I've had the opportunity to intern using
-                    Retrieval-Augmented Generation (RAG) and am currently diving
-                    into web development and machine learning. Recently, I’ve
-                    been working on a Clothing Recommendation web app that
-                    utilizes machine learning techniques, specifically
-                    Convolutional Neural Networks (CNNs), to analyze
-                    user-uploaded images and recommend similar clothing items.
-                    Currently, I am learning to implement image segmentation and
-                    masking techniques to improve the app's ability to handle
-                    various backgrounds. In addition to this, I’m developing a
-                    music recommendation app where I aim to analyze audio
-                    spectrograms and integrate this with CSV data from Kaggle to
-                    enhance the recommendation accuracy. Looking forward to
-                    connecting with everyone and sharing our journeys!
-                  </p>
-                )}
-                {title === "Education" && (
-                  <div className="education-timeline-section">
-                    <ol className="relative border-l border-gray-700 ml-9 mb-6">
-                      <li className="mb-10" data-aos="zoom-in">
-                        <h3 className="mb-1 text-lg font-semibold text-white">
-                          University of California, Irvine
-                        </h3>
-                        <p>BS in Computer Science</p>
-                        <time className="block pt-1 pb-3 text-sm font-normal leading-none text-gray-500">
-                          September 2024 - Present
-                        </time>
-                        <p className="mb-4 text-base font-normal text-gray-400">
-                          Relevant Coursework:
-                        </p>
-                      </li>
-                      <br></br>
-                      <li className="mb-10" data-aos="zoom-in">
-                        <h3 className="mb-1 text-lg font-semibold text-white">
-                          Diablo Valley College
-                        </h3>
-                        <p>AS in Computer Science and Mathematics</p>
-                        <time className="block pt-1 pb-3 text-sm font-normal leading-none text-gray-500">
-                          January 2022 - May 2024
-                        </time>
-                        <p className="mb-4 text-base font-normal text-gray-400">
-                          Relevant Coursework: Object Oriented Programming, Data
-                          Structure and Algorithms
-                        </p>
-                      </li>
-                    </ol>
-                  </div>
-                )}
+          <div
+            className={`about-section ${
+              visibleSections.section0 ? "visible" : ""
+            }`}
+            ref={(el) => (aboutRefs.current[0] = el)}
+            id="section0"
+          >
+            <div className="about-card">
+              <h2>About Me</h2>
+              <p>
+                Hello! I'm Shizuka, a Computer Science student at UC Irvine with a passion for 
+                machine learning and software development. I love building intelligent systems 
+                that solve real-world problems, from clothing recommendation engines using CNNs 
+                to RAG-powered chatbots.
+              </p>
+              <p>
+                My journey spans from data science internships to full-stack development, 
+                always with an eye for creating user-friendly, impactful solutions. I'm 
+                particularly drawn to the intersection of AI and practical applications.
+              </p>
+              <div className="capybara-note">
+                🌸 Currently plotting a peaceful side quest as a Pilates instructor because 
+                balance is key (literally!). When I'm not debugging code, you'll find me 
+                admiring capybaras - they're the zen masters of the animal kingdom! 🧘‍♀️
               </div>
             </div>
-          ))}
+          </div>
+
+          <div
+            className={`about-section ${
+              visibleSections.section1 ? "visible" : ""
+            }`}
+            ref={(el) => (aboutRefs.current[1] = el)}
+            id="section1"
+          >
+            <div className="about-card">
+              <h2>Education</h2>
+              <div className="education-timeline">
+                <div className="timeline-item">
+                  <h3>University of California, Irvine</h3>
+                  <div className="degree">BS in Computer Science</div>
+                  <div className="duration">September 2024 - Present</div>
+                  <div className="coursework">
+                    Relevant Coursework: Data Structures & Algorithms, Software Engineering, 
+                    Machine Learning, Database Systems
+                  </div>
+                </div>
+                <div className="timeline-item">
+                  <h3>Diablo Valley College</h3>
+                  <div className="degree">AS in Computer Science and Mathematics</div>
+                  <div className="duration">January 2022 - May 2024</div>
+                  <div className="coursework">
+                    Relevant Coursework: Object Oriented Programming, Data Structures, 
+                    Calculus, Linear Algebra, Statistics
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div className="technical-skills">
-          <Technologies />
-          <Skills />
+          <div className="about-card">
+            <h2>Technical Skills</h2>
+            <div className="skills-grid">
+              {skills.map((skill, index) => (
+                <div key={index} className="skill-tag">
+                  {skill}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
