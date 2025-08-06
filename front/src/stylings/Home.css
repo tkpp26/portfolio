@@ -45,21 +45,49 @@ body::before {
 
 /* Cute floating flowers */
 body::after {
-  content: '🌸 🌺 🌻 🌷 🌹 💐 🌸 🌺 🌻 🌷 🌹 💐 🌸 🌺 🌻 🌷 🌹 💐';
+  content: '';
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  font-size: 1.5rem;
-  opacity: 0.15;
   pointer-events: none;
   z-index: -1;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-around;
-  justify-content: space-around;
-  animation: gentle-pulse 8s ease-in-out infinite;
+}
+
+/* Individual scattered flowers */
+body::after {
+  background-image: 
+    /* Row 1 */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='30' opacity='0.2'%3E🌸%3C/text%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='25' opacity='0.15'%3E🌺%3C/text%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='28' opacity='0.18'%3E🌻%3C/text%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='22' opacity='0.12'%3E🌷%3C/text%3E%3C/svg%3E"),
+    /* Row 2 */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='26' opacity='0.16'%3E🌹%3C/text%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='24' opacity='0.14'%3E💐%3C/text%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='29' opacity='0.19'%3E🌸%3C/text%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='23' opacity='0.13'%3E🌺%3C/text%3E%3C/svg%3E"),
+    /* Row 3 */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='27' opacity='0.17'%3E🌻%3C/text%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='21' opacity='0.11'%3E🌷%3C/text%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='31' opacity='0.21'%3E🌹%3C/text%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='25' opacity='0.15'%3E💐%3C/text%3E%3C/svg%3E");
+  
+  background-position: 
+    /* Row 1 - scattered across top */
+    15% 12%, 35% 8%, 65% 15%, 85% 10%,
+    /* Row 2 - middle area */
+    8% 35%, 28% 42%, 52% 38%, 78% 45%,
+    /* Row 3 - lower area */
+    20% 65%, 45% 72%, 70% 68%, 90% 75%;
+  
+  background-repeat: no-repeat;
+  background-size: 60px 60px, 50px 50px, 55px 55px, 45px 45px,
+                   52px 52px, 48px 48px, 58px 58px, 46px 46px,
+                   54px 54px, 42px 42px, 62px 62px, 50px 50px;
+  
+  animation: gentle-float 12s ease-in-out infinite;
 }
 
 @keyframes gentle-pulse {
@@ -70,6 +98,25 @@ body::after {
   50% { 
     opacity: 0.25; 
     transform: scale(1.05); 
+  }
+}
+
+@keyframes gentle-float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.8;
+  }
+  25% { 
+    transform: translateY(-3px) rotate(1deg);
+    opacity: 0.9;
+  }
+  50% { 
+    transform: translateY(-5px) rotate(-1deg);
+    opacity: 1;
+  }
+  75% { 
+    transform: translateY(-2px) rotate(0.5deg);
+    opacity: 0.9;
   }
 }
 .element {
