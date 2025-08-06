@@ -2,7 +2,7 @@
 .about-container {
   display: flex;
   justify-content: center;
-  background: linear-gradient(135deg, var(--warm-white) 0%, var(--mint-green) 100%);
+  background: transparent;
   padding: 4rem 2rem;
   opacity: 0;
   transform: translateY(50px);
@@ -11,30 +11,6 @@
   min-height: 100vh;
 }
 
-.about-container::before {
-  content: '🌸';
-  position: absolute;
-  top: 10%;
-  right: 10%;
-  font-size: 3rem;
-  opacity: 0.1;
-  animation: gentle-float 8s ease-in-out infinite;
-}
-
-.about-container::after {
-  content: '☘️';
-  position: absolute;
-  bottom: 15%;
-  left: 8%;
-  font-size: 2.5rem;
-  opacity: 0.1;
-  animation: gentle-float 10s ease-in-out infinite reverse;
-}
-
-@keyframes gentle-float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-15px) rotate(5deg); }
-}
 
 .about-container.visible {
   opacity: 1;

@@ -2,7 +2,7 @@
 .experience-section {
   display: flex;
   justify-content: center;
-  background: linear-gradient(135deg, var(--soft-blue) 0%, var(--warm-white) 50%, var(--soft-pink) 100%);
+  background: transparent;
   opacity: 0;
   transform: translateY(50px);
   transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -11,30 +11,6 @@
   position: relative;
 }
 
-.experience-section::before {
-  content: '⭐';
-  position: absolute;
-  top: 15%;
-  left: 5%;
-  font-size: 2rem;
-  opacity: 0.15;
-  animation: twinkle 4s ease-in-out infinite;
-}
-
-.experience-section::after {
-  content: '🌸';
-  position: absolute;
-  bottom: 20%;
-  right: 8%;
-  font-size: 2.5rem;
-  opacity: 0.15;
-  animation: twinkle 6s ease-in-out infinite reverse;
-}
-
-@keyframes twinkle {
-  0%, 100% { opacity: 0.15; transform: scale(1); }
-  50% { opacity: 0.3; transform: scale(1.1); }
-}
 
 .experience-section.visible {
   opacity: 1;

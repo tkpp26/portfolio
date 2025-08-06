@@ -4,44 +4,12 @@
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(135deg, var(--warm-white) 0%, var(--soft-pink) 30%, var(--mint-green) 70%, var(--soft-blue) 100%);
+  background: transparent;
   flex-direction: column;
   position: relative;
   overflow: hidden;
 }
 
-/* Peaceful background elements */
-.introduction::before {
-  content: '✨ 🌸 ☘️ ✨ 🌸 ☘️';
-  position: absolute;
-  top: 20%;
-  left: -10%;
-  font-size: 2rem;
-  opacity: 0.2;
-  animation: drift 20s linear infinite;
-  white-space: nowrap;
-}
-
-.introduction::after {
-  content: '☘️ ✨ 🌸 ☘️ ✨ 🌸';
-  position: absolute;
-  bottom: 20%;
-  right: -10%;
-  font-size: 1.8rem;
-  opacity: 0.2;
-  animation: drift-reverse 25s linear infinite;
-  white-space: nowrap;
-}
-
-@keyframes drift {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100vw); }
-}
-
-@keyframes drift-reverse {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100vw); }
-}
 
 .card {
   opacity: 0;

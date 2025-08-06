@@ -21,11 +21,57 @@
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   background: linear-gradient(135deg, var(--warm-white) 0%, var(--soft-pink) 50%, var(--mint-green) 100%);
+  position: relative;
   color: var(--text-dark);
   line-height: 1.6;
   overflow-x: hidden;
 }
 
+/* Global cute flower background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(248, 215, 218, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(168, 213, 186, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(227, 242, 253, 0.3) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* Cute floating flowers */
+body::after {
+  content: '🌸 🌺 🌻 🌷 🌹 💐 🌸 🌺 🌻 🌷 🌹 💐 🌸 🌺 🌻 🌷 🌹 💐';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1.5rem;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-around;
+  animation: gentle-pulse 8s ease-in-out infinite;
+}
+
+@keyframes gentle-pulse {
+  0%, 100% { 
+    opacity: 0.15; 
+    transform: scale(1); 
+  }
+  50% { 
+    opacity: 0.25; 
+    transform: scale(1.05); 
+  }
+}
 .element {
   opacity: 0;
   transition: opacity 1s ease-in-out;
@@ -35,44 +81,6 @@ body {
   opacity: 1;
 }
 
-/* Floating elements for peaceful ambiance */
-.floating-elements {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-}
-
-.floating-star,
-.floating-flower,
-.floating-clover {
-  position: absolute;
-  opacity: 0.3;
-  animation: float 6s ease-in-out infinite;
-}
-
-.floating-star {
-  color: #ffd700;
-  font-size: 1.2rem;
-}
-
-.floating-flower {
-  color: var(--primary-pink);
-  font-size: 1.5rem;
-}
-
-.floating-clover {
-  color: var(--sage-green);
-  font-size: 1.3rem;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(180deg); }
-}
 
 /* Section spacing */
 .introduction,
@@ -82,6 +90,7 @@ body {
   min-height: 100vh;
   padding: 2rem;
   position: relative;
+  background: transparent;
 }
 
 /* Smooth scrolling */
