@@ -1,10 +1,10 @@
 /* Home.css */
 :root {
-  --primary-pink: #f8d7da;
-  --soft-pink: #fce4ec;
-  --sage-green: #a8d5ba;
-  --mint-green: #e8f5e8;
-  --soft-blue: #e3f2fd;
+  --primary-pink: #fae1e4;
+  --soft-pink: #fde7f0;
+  --sage-green: #b2d9c4;
+  --mint-green: #ebf7eb;
+  --soft-blue: #e8f4fe;
   --warm-white: #fefefe;
   --text-dark: #2c3e50;
   --text-light: #5a6c7d;
@@ -36,9 +36,9 @@ body::before {
   width: 100%;
   height: 100%;
   background-image: 
-    radial-gradient(circle at 10% 20%, rgba(248, 215, 218, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(168, 213, 186, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(227, 242, 253, 0.3) 0%, transparent 50%);
+    radial-gradient(circle at 10% 20%, rgba(250, 225, 228, 0.35) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(178, 217, 196, 0.35) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(232, 244, 254, 0.35) 0%, transparent 50%);
   pointer-events: none;
   z-index: -2;
 }
