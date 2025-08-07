@@ -93,7 +93,7 @@ export default function Introduction() {
               GitHub
             </a>
             <a
-              href="https://drive.google.com/file/d/1MZAc8kKZ0zAYZF37lEjNYc6CjOb4Npjr/view?usp=sharing"
+              href="/ShizukaTakao.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
