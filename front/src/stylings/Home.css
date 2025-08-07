@@ -58,33 +58,28 @@ body::after {
   height: 100%;
   pointer-events: none;
   z-index: -1;
+  transition: all 1s ease-in-out;
 }
 
-/* Individual scattered flowers */
+/* Default flower positions (Introduction section) */
 body::after {
   background-image: 
-    /* Row 1 */
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='30' opacity='0.2'%3E🌸%3C/text%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='25' opacity='0.15'%3E🌺%3C/text%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='28' opacity='0.18'%3E🌻%3C/text%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='22' opacity='0.12'%3E🌷%3C/text%3E%3C/svg%3E"),
-    /* Row 2 */
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='26' opacity='0.16'%3E🌹%3C/text%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='24' opacity='0.14'%3E💐%3C/text%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='29' opacity='0.19'%3E🌸%3C/text%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='23' opacity='0.13'%3E🌺%3C/text%3E%3C/svg%3E"),
-    /* Row 3 */
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='27' opacity='0.17'%3E🌻%3C/text%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='21' opacity='0.11'%3E🌷%3C/text%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='31' opacity='0.21'%3E🌹%3C/text%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='50' font-size='25' opacity='0.15'%3E💐%3C/text%3E%3C/svg%3E");
   
   background-position: 
-    /* Row 1 - scattered across top */
     15% 12%, 35% 8%, 65% 15%, 85% 10%,
-    /* Row 2 - middle area */
     8% 35%, 28% 42%, 52% 38%, 78% 45%,
-    /* Row 3 - lower area */
     20% 65%, 45% 72%, 70% 68%, 90% 75%;
   
   background-repeat: no-repeat;
@@ -93,6 +88,30 @@ body::after {
                    54px 54px, 42px 42px, 62px 62px, 50px 50px;
   
   animation: gentle-float 12s ease-in-out infinite;
+}
+
+/* About section flower positions */
+body.about-active::after {
+  background-position: 
+    25% 18%, 55% 12%, 75% 22%, 95% 8%,
+    12% 45%, 38% 52%, 62% 48%, 88% 55%,
+    30% 75%, 55% 82%, 80% 78%, 5% 85%;
+}
+
+/* Experience section flower positions */
+body.experience-active::after {
+  background-position: 
+    10% 15%, 40% 5%, 70% 18%, 90% 12%,
+    5% 40%, 35% 48%, 65% 42%, 85% 50%,
+    15% 70%, 50% 78%, 75% 72%, 95% 80%;
+}
+
+/* Portfolio section flower positions */
+body.portfolio-active::after {
+  background-position: 
+    20% 10%, 45% 15%, 80% 8%, 5% 20%,
+    15% 38%, 45% 45%, 70% 40%, 90% 48%,
+    25% 68%, 60% 75%, 85% 70%, 10% 78%;
 }
 
 @keyframes gentle-pulse {
