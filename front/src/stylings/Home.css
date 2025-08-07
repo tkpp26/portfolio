@@ -5,6 +5,9 @@
   --sage-green: #b2d9c4;
   --mint-green: #ebf7eb;
   --soft-blue: #e8f4fe;
+  --lavender-blue: #e6f0ff;
+  --soft-yellow: #fff9e6;
+  --cream-yellow: #fffbf0;
   --warm-white: #fefefe;
   --text-dark: #2c3e50;
   --text-light: #5a6c7d;
@@ -20,7 +23,7 @@
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  background: linear-gradient(135deg, var(--warm-white) 0%, var(--soft-pink) 50%, var(--mint-green) 100%);
+  background: linear-gradient(135deg, var(--warm-white) 0%, var(--soft-pink) 20%, var(--lavender-blue) 40%, var(--mint-green) 60%, var(--soft-yellow) 80%, var(--soft-blue) 100%);
   position: relative;
   color: var(--text-dark);
   line-height: 1.6;
@@ -36,9 +39,11 @@ body::before {
   width: 100%;
   height: 100%;
   background-image: 
-    radial-gradient(circle at 10% 20%, rgba(250, 225, 228, 0.35) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(178, 217, 196, 0.35) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(232, 244, 254, 0.35) 0%, transparent 50%);
+    radial-gradient(circle at 10% 20%, rgba(253, 234, 242, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(184, 220, 198, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(236, 246, 255, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 70% 30%, rgba(255, 249, 230, 0.35) 0%, transparent 50%),
+    radial-gradient(circle at 20% 70%, rgba(230, 240, 255, 0.35) 0%, transparent 50%);
   pointer-events: none;
   z-index: -2;
 }
