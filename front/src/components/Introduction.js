@@ -3,12 +3,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faFileAlt } from "@fortawesome/free-solid-svg-icons";
 import "../stylings/Introduction.css";
+import selfImg from "../assets/self_img.jpg";
 
 export default function Introduction() {
   const [index, setIndex] = useState(0);
-  const [isVisible, setIsVisible] = useState({ card: false, linksCard: false });
+  const [isVisible, setIsVisible] = useState({
+    hero: false,
+    linksCard: false,
+  });
   const typingRef = useRef(null);
-  const cardRef = useRef(null);
+  const heroRef = useRef(null);
   const linksCardRef = useRef(null);
   const text = "Hi, I'm Shizuka";
 
@@ -33,8 +37,8 @@ export default function Introduction() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const { target } = entry;
-            if (target === cardRef.current) {
-              setIsVisible((prev) => ({ ...prev, card: true }));
+            if (target === heroRef.current) {
+              setIsVisible((prev) => ({ ...prev, hero: true }));
             } else if (target === linksCardRef.current) {
               setIsVisible((prev) => ({ ...prev, linksCard: true }));
             }
@@ -45,16 +49,16 @@ export default function Introduction() {
       { threshold: 0.1 }
     );
 
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
     }
     if (linksCardRef.current) {
       observer.observe(linksCardRef.current);
     }
 
     return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
+      if (heroRef.current) {
+        observer.unobserve(heroRef.current);
       }
       if (linksCardRef.current) {
         observer.unobserve(linksCardRef.current);
@@ -64,12 +68,33 @@ export default function Introduction() {
 
   return (
     <div id="intro" className="introduction">
-      <div ref={cardRef} className={`card ${isVisible.card ? "visible" : ""}`}>
-        <div className="typing-container">
-          <h1 ref={typingRef}></h1>
+      {/* Hero Section with Image and Text */}
+      <div
+        ref={heroRef}
+        className={`hero-section ${isVisible.hero ? "visible" : ""}`}
+      >
+        <div className="profile-image-container">
+          <div className="profile-image-wrapper">
+            <img
+              src={selfImg}
+              alt="Shizuka Takao - Profile"
+              className="profile-image"
+            />
+            <div className="image-overlay"></div>
+          </div>
+        </div>
+
+        <div className="hero-text">
+          <div className="typing-container">
+            <h1 ref={typingRef}></h1>
+          </div>
+          <p className="intro-subtitle">
+            Full-Stack Developer & Problem Solver
+          </p>
         </div>
       </div>
 
+      {/* Links Section */}
       <div
         ref={linksCardRef}
         className={`links-container ${isVisible.linksCard ? "visible" : ""}`}
