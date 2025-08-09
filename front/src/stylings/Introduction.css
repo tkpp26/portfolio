@@ -109,13 +109,17 @@
   position: relative;
   white-space: nowrap;
 }
-
 .typing-container h1::after {
   content: "|";
   position: absolute;
-  right: -0.4em;
+  right: -0.35em;
+  top: 0;
+  /* make sure it’s visible even though the h1 uses gradient fill */
+  -webkit-text-fill-color: currentColor; /* <-- key line */
+  color: rgba(0, 176, 97, 0.278);
   animation: blink 0.8s infinite;
-  color: rgba(80, 80, 80, 0.5); /* softer grey cursor */
+  /* optional: make it align nicer with the baseline */
+  transform: translateY(8%);
 }
 
 @keyframes blink {
