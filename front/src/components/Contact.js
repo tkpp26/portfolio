@@ -1,81 +1,97 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../stylings/Contact.css";
+import cuteGif from "../assets/contact/cute.webp";
 
 export default function Contact() {
-  const [isVisible, setIsVisible] = useState(false);
-  const contactRef = useRef(null);
+  const [status, setStatus] = useState(null);
+  const rootRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const obs = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            observer.unobserve(entry.target); // Stop observing after visibility is detected
-          }
-        });
+        entries.forEach(
+          (e) => e.isIntersecting && rootRef.current?.classList.add("visible")
+        );
       },
       { threshold: 0.1 }
     );
-
-    if (contactRef.current) {
-      observer.observe(contactRef.current);
-    }
-
-    return () => {
-      if (contactRef.current) {
-        observer.unobserve(contactRef.current);
-      }
-    };
+    if (rootRef.current) obs.observe(rootRef.current);
+    return () => obs.disconnect();
   }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const name = e.target.name.value;
-    const email = e.target.email.value;
-    const message = e.target.message.value;
-
+    setStatus(null);
+    const { name, email, message } = e.target;
     try {
-      const response = await fetch("http://localhost:5000/send-email", {
+      const res = await fetch("http://localhost:5000/send-email", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, email, message }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name.value.trim(),
+          email: email.value.trim(),
+          message: message.value.trim(),
+        }),
       });
-
-      if (response.ok) {
-        alert("Email sent successfully");
-        e.target.reset(); // Optionally reset the form
-      } else {
-        alert("Error sending email");
-      }
-    } catch (error) {
-      alert("Error sending email");
+      setStatus(res.ok ? "ok" : "err");
+      if (res.ok) e.target.reset();
+    } catch {
+      setStatus("err");
     }
   };
 
   return (
-    <div
+    <section
       id="contact"
-      className={`contact-container ${isVisible ? "visible" : ""}`}
-      ref={contactRef}
+      className="ct-wrap"
+      ref={rootRef}
+      aria-labelledby="contact-title"
     >
-      <div className="contact-card">
-        <h2>Contact Me</h2>
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name="name" required />
+      <header className="ct-heading">
+        <h2 id="contact-title">Contact Me</h2>
+        <p className="ct-sub">Let’s build something lovely together ✨</p>
+      </header>
 
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" required />
+      {/* Two separate cards (not inside one big div) */}
+      <div className="ct-grid">
+        {/* Form card */}
+        <form className="ct-card ct-formCard" onSubmit={handleSubmit}>
+          <div className="ct-field">
+            <label htmlFor="name">Name</label>
+            <input id="name" name="name" type="text" required />
+          </div>
 
-          <label htmlFor="message">Message:</label>
-          <textarea id="message" name="message" required></textarea>
+          <div className="ct-field">
+            <label htmlFor="email">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
 
-          <button type="submit">Send</button>
+          <div className="ct-field">
+            <label htmlFor="message">Message</label>
+            <textarea id="message" name="message" rows="5" required />
+          </div>
+
+          <button className="ct-submit" type="submit">
+            Send
+          </button>
+
+          {status === "ok" && (
+            <p className="ct-status ok">Thanks! Your message was sent 💌</p>
+          )}
+          {status === "err" && (
+            <p className="ct-status err">
+              Something went wrong. Please try again.
+            </p>
+          )}
         </form>
+
+        {/* Gif card (separate) */}
+        <aside className="ct-card ct-gifCard" aria-hidden="true">
+          <div className="gif-canvas">
+            <img src={cuteGif} alt="" className="gif-img" loading="lazy" />
+          </div>
+        </aside>
       </div>
-    </div>
+    </section>
   );
 }

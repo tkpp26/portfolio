@@ -1,59 +1,170 @@
-.contact-container {
-  background-color: #ffffff; /* Light background */
-  padding: 2rem; /* Padding around the container */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Box shadow */
-  opacity: 0; /* Start hidden */
-  transform: translateY(50px); /* Start off-screen */
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Smooth transition */
+/* ===== airy, transparent layout; gif tuned to #8fd47f ===== */
+:root {
+  --ink: #1a1d1f;
+  --muted: #667085;
+  --mint-soft: #dff5e7; /* supporting tint */
+  --glass: rgba(255, 255, 255, 0.72);
+  --stroke: rgba(16, 24, 40, 0.1);
+  --shadow: 0 8px 26px rgba(16, 24, 40, 0.1);
 }
 
-.contact-container.visible {
-  opacity: 1; /* Fade in */
-  transform: translateY(0); /* Slide up */
+.ct-wrap {
+  padding: clamp(2rem, 4vw, 4rem) 1rem;
+  /* keep background visible */
+  background: transparent;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.ct-wrap.visible {
+  opacity: 1;
+  transform: none;
 }
 
-.contact-card {
-  width: 80%;
-  background-color: white;
-  padding: 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  margin: auto; /* Center the card horizontally */
+.ct-heading {
+  text-align: center;
+  margin: 0 auto 1.25rem;
+  max-width: 720px;
+}
+.ct-heading h2 {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+}
+.ct-sub {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
 }
 
-.contact-card h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+/* separate floating cards */
+.ct-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(1rem, 2.2vw, 1.5rem);
+  max-width: 1100px;
+  margin: 0 auto;
+  background: transparent; /* show page bg */
 }
 
-.contact-card form {
+.ct-card {
+  border-radius: 18px;
+  background: var(--glass);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* form card */
+.ct-formCard {
+  padding: clamp(1rem, 2.4vw, 1.6rem);
+}
+.ct-field {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.95rem;
 }
-
-.contact-card label {
-  margin-bottom: 0.5rem;
-  font-weight: bold;
+.ct-field label {
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.9rem;
 }
-
-.contact-card input,
-.contact-card textarea {
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.ct-field input,
+.ct-field textarea {
+  background: #fff;
+  border: 1px solid var(--stroke);
+  border-radius: 12px;
+  padding: 0.8rem 0.9rem;
+  font-size: 0.95rem;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
-
-.contact-card button {
-  background-color: #ffffff;
-  color: black; /* Change text color to black */
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+.ct-field textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+.ct-field input:focus,
+.ct-field textarea:focus {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--ring) 25%, transparent);
+}
+.ct-submit {
+  background: linear-gradient(135deg, #f4fff7, var(--mint-soft));
+  color: #0f172a;
+  border: 1px solid var(--stroke);
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
   cursor: pointer;
-  font-size: 1rem;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.ct-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(16, 24, 40, 0.12);
 }
 
-.contact-card button:hover {
-  background-color: #f0f0f0;
+/* gif card — minimal, tuned to #8fd47f, lets background show */
+.ct-gifCard {
+  padding: clamp(1rem, 2.4vw, 1.6rem);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--gif-green) 18%, transparent),
+    color-mix(in oklab, var(--gif-green) 6%, transparent)
+  ); /* very light tint only */
+}
+.gif-canvas {
+  border-radius: 14px;
+  background: radial-gradient(
+      70% 100% at 30% 30%,
+      color-mix(in oklab, var(--gif-green) 28%, transparent),
+      transparent 70%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--gif-green) 15%, #ffffff),
+      #ffffff
+    );
+  border: 1px solid color-mix(in oklab, var(--gif-green) 25%, #ffffff);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+.gif-img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  object-fit: contain;
+  /* merge the gif's green with panel */
+  mix-blend-mode: multiply; /* remove this if it over-blends on your image */
+}
+
+/* feedback text */
+.ct-status {
+  margin-top: 0.65rem;
+  font-size: 0.9rem;
+}
+.ct-status.ok {
+  color: #0f8c68;
+}
+.ct-status.err {
+  color: #c0392b;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .ct-grid {
+    grid-template-columns: 1fr;
+  }
+  .gif-img {
+    max-width: 420px;
+  }
+}
+@media (max-width: 480px) {
+  .ct-card {
+    border-radius: 16px;
+  }
 }
