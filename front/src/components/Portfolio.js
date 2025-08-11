@@ -13,7 +13,7 @@ import image5 from "../assets/4.png";
 import minmax from "../assets/5.png";
 import moodtracker from "../assets/6.png";
 import newsWeb from "../assets/7.png";
-
+import construction from "../assets/8.gif";
 export default function Portfolio() {
   const projects = [
     {
@@ -55,6 +55,25 @@ export default function Portfolio() {
       demo: "https://mood-tracker-rosy.vercel.app/",
     },
     {
+      title: "Fabflix Movie Database",
+      github: "https://github.com/yourusername/fabflix-movie-database", // replace with actual repo link
+      description:
+        "A full-stack web application for movie database management with advanced performance optimization and cloud deployment. Built with over 3000 lines of Java, JQuery, and HTML/CSS, featuring an ETL pipeline for large XML datasets, AWS EC2 & MySQL integration, and Dockerized deployment on a Kubernetes cluster. Optimized backend performance by 3× using connection pooling, MySQL replication, and load balancing.",
+      technologies: [
+        "Java",
+        "JQuery",
+        "HTML",
+        "CSS",
+        "MySQL",
+        "AWS EC2",
+        "Tomcat",
+        "Docker",
+        "Kubernetes",
+      ],
+      image: construction,
+    },
+
+    {
       title: "RecipeMaker AI",
       github: "https://github.com/khmorad/recipeMakerAI",
       demo: "https://www.youtube.com/watch?v=erw31rS5tag",
@@ -75,6 +94,24 @@ export default function Portfolio() {
       image: image3,
     },
     {
+      title: "Minimax & Alpha–Beta Visualization",
+      github: "https://github.com/khmorad/minimax-alpha-beta-visualizer", // replace with actual repo link
+      demo: "https://www.youtube.com/watch?v=XXXXX", // replace with actual demo link if any
+      description:
+        "An interactive visualization tool for learning and understanding the Minimax and Alpha–Beta pruning algorithms in game theory. Users can step through each stage of the algorithm, view α/β values directly on nodes, and switch between standard Minimax and Alpha–Beta pruning modes. Built with React and D3.js for dynamic graph rendering, the app helps users visually grasp decision-making processes in adversarial search.",
+      technologies: ["Python", "Streamlit", "AI"],
+      image: minmax,
+    },
+    {
+      title: "NewsWeb",
+      github: "https://github.com/tkpp26/NewsWeb",
+      demo: "https://www.youtube.com/watch?v=XXXXX",
+      description:
+        "A news application developed using JavaScript, HTML, and CSS. It leverages the NewsAPI to display recent news articles across various categories, allowing users to select their interests.",
+      technologies: ["JavaScript", "HTML", "CSS", "NewsAPI"],
+      image: newsWeb,
+    },
+    {
       title: "Diabetes Risk Prediction Model",
       github: "https://github.com/tkpp26/Diabetes-Classification",
       colab:
@@ -89,24 +126,6 @@ export default function Portfolio() {
         "Jupyter",
       ],
       image: image2,
-    },
-    {
-      title: "Minimax & Alpha–Beta Visualization",
-      github: "https://github.com/khmorad/minimax-alpha-beta-visualizer", // replace with actual repo link
-      demo: "https://www.youtube.com/watch?v=XXXXX", // replace with actual demo link if any
-      description:
-        "An interactive visualization tool for learning and understanding the Minimax and Alpha–Beta pruning algorithms in game theory. Users can step through each stage of the algorithm, view α/β values directly on nodes, and switch between standard Minimax and Alpha–Beta pruning modes. Built with React and D3.js for dynamic graph rendering, the app helps users visually grasp decision-making processes in adversarial search.",
-      technologies: ["React", "JavaScript", "D3.js", "HTML", "CSS"],
-      image: minmax,
-    },
-    {
-      title: "NewsWeb",
-      github: "https://github.com/tkpp26/NewsWeb",
-      demo: "https://www.youtube.com/watch?v=XXXXX",
-      description:
-        "A news application developed using JavaScript, HTML, and CSS. It leverages the NewsAPI to display recent news articles across various categories, allowing users to select their interests.",
-      technologies: ["JavaScript", "HTML", "CSS", "NewsAPI"],
-      image: newsWeb,
     },
   ];
 

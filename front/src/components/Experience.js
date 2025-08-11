@@ -84,21 +84,6 @@ export default function Experience() {
       ],
     },
     {
-      id: "experience3",
-      title: "UC Irvine",
-      role: "Full-Stack Developer - Fabflix Movie Database",
-      duration: "April 2025 - June 2025",
-      description:
-        "Built a comprehensive full-stack web application for movie database management with advanced performance optimization and cloud deployment.",
-      achievements: [
-        "Built full-stack web app with 3000+ lines of code using Java, JQuery, and HTML/CSS",
-        "Configured AWS EC2, MySQL, and Tomcat server, and imported 50K+ movie records into the database",
-        "Designed and executed ETL pipeline to parse and ingest large XML datasets",
-        "Optimized backend performance by 3× using connection pooling, MySQL replication, and load balancing",
-        "Containerized and deployed the app using Docker on a Kubernetes cluster across multiple AWS nodes",
-      ],
-    },
-    {
       id: "experience4",
       title: "Headstarter",
       role: "Software Engineer Fellow",
