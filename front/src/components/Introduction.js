@@ -1,12 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faFileAlt } from "@fortawesome/free-solid-svg-icons";
+import { faFileAlt, faRocket, faSun } from "@fortawesome/free-solid-svg-icons";
 import "../stylings/Introduction.css";
 import selfImg from "../assets/self_img.jpg";
 
 export default function Introduction() {
   const [index, setIndex] = useState(0);
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
   const [isVisible, setIsVisible] = useState({
     hero: false,
     linksCard: false,
@@ -15,6 +16,11 @@ export default function Introduction() {
   const heroRef = useRef(null);
   const linksCardRef = useRef(null);
   const text = "Hi, I'm Shizuka";
+
+  const toggleTheme = () => {
+    setIsDarkTheme(!isDarkTheme);
+    document.body.classList.toggle('dark-space-theme', !isDarkTheme);
+  };
 
   useEffect(() => {
     const type = () => {
@@ -66,8 +72,37 @@ export default function Introduction() {
     };
   }, []);
 
+  useEffect(() => {
+    // Apply theme class to body on component mount
+    if (isDarkTheme) {
+      document.body.classList.add('dark-space-theme');
+    } else {
+      document.body.classList.remove('dark-space-theme');
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.classList.remove('dark-space-theme');
+    };
+  }, [isDarkTheme]);
+
   return (
     <div id="intro" className="introduction">
+      {/* Theme Toggle Button */}
+      <button 
+        className={`theme-toggle-btn ${isDarkTheme ? 'dark' : 'light'}`}
+        onClick={toggleTheme}
+        aria-label={isDarkTheme ? 'Switch to light theme' : 'Switch to dark space theme'}
+      >
+        <FontAwesomeIcon 
+          icon={isDarkTheme ? faSun : faRocket} 
+          className="theme-icon"
+        />
+        <span className="theme-text">
+          {isDarkTheme ? 'Light Mode' : 'Space Mode'}
+        </span>
+      </button>
+
       {/* Hero Section with Image and Text */}
       <div
         ref={heroRef}
@@ -88,7 +123,7 @@ export default function Introduction() {
           <div className="typing-container">
             <h1 ref={typingRef}></h1>
           </div>
-          <p className="intro-subtitle">
+          <p className={`intro-subtitle ${isDarkTheme ? 'cosmic-text' : ''}`}>
             Full-Stack Developer & Problem Solver
           </p>
         </div>
@@ -130,7 +165,7 @@ export default function Introduction() {
       </div>
       <div className="scroll-down-container">
         <button
-          className="scroll-down-btn"
+          className={`scroll-down-btn ${isDarkTheme ? 'cosmic' : ''}`}
           onClick={() =>
             document
               .getElementById("about")

@@ -168,3 +168,78 @@
     border-radius: 16px;
   }
 }
+
+/* Dark Space Theme for Contact Section */
+body.dark-space-theme .ct-wrap {
+  color: #e2e8f0;
+}
+
+body.dark-space-theme .ct-heading h2 {
+  color: #f1f5f9;
+  background: linear-gradient(90deg, #06ffa5, #3a86ff, #8338ec, #ff006e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 20px rgba(6, 255, 165, 0.3));
+}
+
+body.dark-space-theme .ct-sub {
+  color: #cbd5e1;
+}
+
+body.dark-space-theme .ct-card {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  box-shadow: 0 8px 26px rgba(139, 92, 246, 0.2);
+}
+
+body.dark-space-theme .ct-field label {
+  color: #f1f5f9;
+}
+
+body.dark-space-theme .ct-field input,
+body.dark-space-theme .ct-field textarea {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: #e2e8f0;
+}
+
+body.dark-space-theme .ct-field input:focus,
+body.dark-space-theme .ct-field textarea:focus {
+  border-color: #06ffa5;
+  box-shadow: 0 0 0 3px rgba(6, 255, 165, 0.2);
+}
+
+body.dark-space-theme .ct-submit {
+  background: linear-gradient(135deg, #8338ec, #3a86ff);
+  color: #f1f5f9;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+body.dark-space-theme .ct-submit:hover {
+  background: linear-gradient(135deg, #ff006e, #8338ec);
+  box-shadow: 0 10px 28px rgba(255, 0, 110, 0.3);
+}
+
+body.dark-space-theme .ct-gifCard {
+  background: linear-gradient(
+    180deg,
+    rgba(139, 92, 246, 0.1),
+    rgba(59, 130, 246, 0.05)
+  );
+}
+
+body.dark-space-theme .gif-canvas {
+  background: radial-gradient(
+      70% 100% at 30% 30%,
+      rgba(139, 92, 246, 0.2),
+      transparent 70%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(15, 23, 42, 0.8),
+      rgba(30, 41, 59, 0.6)
+    );
+  border: 1px solid rgba(139, 92, 246, 0.3);
+}
