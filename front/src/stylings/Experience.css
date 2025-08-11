@@ -283,6 +283,7 @@
 /* Dark Space Theme for Experience Section */
 body.dark-space-theme .experience-section {
   color: #e2e8f0;
+  position: relative;
 }
 
 body.dark-space-theme .wrapper-container {
@@ -294,29 +295,49 @@ body.dark-space-theme .wrapper-container {
 
 body.dark-space-theme .wrapper-container::before {
   background: linear-gradient(90deg, #ff006e, #8338ec, #3a86ff, #06ffa5, #ffbe0b);
+  animation: cosmic-border-flow 3s linear infinite;
 }
 
 body.dark-space-theme .wrapper-container h1 {
-  color: #f1f5f9;
-  background: linear-gradient(90deg, #06ffa5, #3a86ff, #8338ec, #ff006e);
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  font-size: 3.5rem;
+  background: linear-gradient(
+    45deg,
+    #ff006e,
+    #8338ec,
+    #3a86ff,
+    #06ffa5,
+    #ffbe0b,
+    #ff006e
+  );
+  background-size: 400% 400%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 0 20px rgba(6, 255, 165, 0.3));
+  animation: cosmic-title-flow 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 30px rgba(131, 56, 236, 0.6));
+  text-shadow: 0 0 50px rgba(6, 255, 165, 0.4);
 }
 
 body.dark-space-theme .wrapper-container h1::after {
-  background: linear-gradient(90deg, #06ffa5, #8338ec);
+  background: linear-gradient(90deg, #06ffa5, #8338ec, #ff006e);
+  animation: cosmic-underline-flow 2s ease-in-out infinite alternate;
+  height: 6px;
+  width: 120px;
 }
 
 body.dark-space-theme .timeline-section::before {
   background: linear-gradient(180deg, #ff006e, #8338ec, #3a86ff, #06ffa5);
+  animation: cosmic-timeline-pulse 3s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
 }
 
 body.dark-space-theme .timeline-section > ol > li::before {
   background: rgba(15, 23, 42, 0.95);
   border-color: #06ffa5;
   box-shadow: 0 4px 8px rgba(6, 255, 165, 0.3);
+  animation: cosmic-node-glow 2s ease-in-out infinite alternate;
 }
 
 body.dark-space-theme .experience-card {
@@ -324,15 +345,18 @@ body.dark-space-theme .experience-card {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(139, 92, 246, 0.3);
   box-shadow: 0 10px 20px rgba(139, 92, 246, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body.dark-space-theme .experience-card:hover {
   box-shadow: 0 15px 30px rgba(139, 92, 246, 0.3);
   border-color: rgba(139, 92, 246, 0.5);
+  transform: translateY(-8px) scale(1.02);
 }
 
 body.dark-space-theme .experience-card::before {
   background: linear-gradient(90deg, #ff006e, #8338ec, #06ffa5);
+  animation: cosmic-card-border 3s linear infinite;
 }
 
 body.dark-space-theme .timeline-section h3 {
@@ -341,10 +365,12 @@ body.dark-space-theme .timeline-section h3 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  filter: drop-shadow(0 0 10px rgba(6, 255, 165, 0.3));
 }
 
 body.dark-space-theme .role {
   color: #06ffa5;
+  filter: drop-shadow(0 0 8px rgba(6, 255, 165, 0.4));
 }
 
 body.dark-space-theme .duration {
@@ -363,9 +389,76 @@ body.dark-space-theme .view-more-btn {
   background: linear-gradient(135deg, #8338ec, #3a86ff);
   color: #f1f5f9;
   border: 1px solid rgba(139, 92, 246, 0.3);
+  transition: all 0.3s ease;
 }
 
 body.dark-space-theme .view-more-btn:hover {
   background: linear-gradient(135deg, #ff006e, #8338ec);
   box-shadow: 0 4px 15px rgba(255, 0, 110, 0.3);
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Cosmic Animations */
+@keyframes cosmic-title-flow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  75% {
+    background-position: 50% 0%;
+  }
+}
+
+@keyframes cosmic-border-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes cosmic-underline-flow {
+  0% {
+    opacity: 0.8;
+    transform: scaleX(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1.2);
+  }
+}
+
+@keyframes cosmic-timeline-pulse {
+  0%, 100% {
+    opacity: 0.8;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.8);
+  }
+}
+
+@keyframes cosmic-node-glow {
+  0% {
+    box-shadow: 0 4px 8px rgba(6, 255, 165, 0.3);
+  }
+  100% {
+    box-shadow: 0 6px 20px rgba(6, 255, 165, 0.6);
+  }
+}
+
+@keyframes cosmic-card-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
 }

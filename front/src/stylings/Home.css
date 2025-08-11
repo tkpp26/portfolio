@@ -90,7 +90,7 @@ body::after {
 }
 
 /* Default flower positions (Introduction section) */
-body::after {
+body:not(.dark-space-theme)::after {
   content: "";
   position: fixed;
   top: 0;
@@ -130,6 +130,7 @@ body.dark-space-theme {
   background: radial-gradient(ellipse at center, #1a1a2e 0%, #16213e 25%, #0f0f23 50%, #000000 100%);
   color: #e2e8f0;
   position: relative;
+  overflow-x: hidden;
 }
 
 /* Cosmic background with stars */
@@ -151,7 +152,7 @@ body.dark-space-theme::before {
   opacity: 0.8;
 }
 
-/* Animated nebula effects */
+/* Cool space particles and effects */
 body.dark-space-theme::after {
   content: '';
   position: fixed;
@@ -160,14 +161,57 @@ body.dark-space-theme::after {
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(ellipse at 20% 30%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 70%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 60% 20%, rgba(6, 255, 165, 0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 30% 80%, rgba(255, 0, 110, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 50%, rgba(255, 190, 11, 0.05) 0%, transparent 50%);
+    /* Floating geometric shapes */
+    radial-gradient(circle at 15% 25%, rgba(139, 92, 246, 0.15) 0%, transparent 30%),
+    radial-gradient(circle at 85% 75%, rgba(59, 130, 246, 0.12) 0%, transparent 25%),
+    radial-gradient(circle at 65% 15%, rgba(6, 255, 165, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 25% 85%, rgba(255, 0, 110, 0.13) 0%, transparent 28%),
+    radial-gradient(circle at 75% 45%, rgba(255, 190, 11, 0.08) 0%, transparent 22%),
+    /* Additional energy fields */
+    linear-gradient(45deg, transparent 48%, rgba(139, 92, 246, 0.03) 50%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgba(6, 255, 165, 0.03) 50%, transparent 52%);
   pointer-events: none;
   z-index: -1;
-  animation: cosmic-nebula 15s ease-in-out infinite alternate;
+  animation: cosmic-energy-field 20s ease-in-out infinite alternate;
+}
+
+/* Additional space effects */
+body.dark-space-theme .introduction::before,
+body.dark-space-theme .about-container::before,
+body.dark-space-theme .experience-section::before,
+body.dark-space-theme .pf-container::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: -5%;
+  width: 2px;
+  height: 2px;
+  background: linear-gradient(45deg, transparent, #ffffff, transparent);
+  border-radius: 50%;
+  animation: shooting-star-multi 4s linear infinite;
+  z-index: 1;
+}
+
+body.dark-space-theme .about-container::before {
+  animation-delay: 1s;
+  top: 20%;
+  right: -5%;
+  left: auto;
+  background: linear-gradient(-45deg, transparent, #06ffa5, transparent);
+}
+
+body.dark-space-theme .experience-section::before {
+  animation-delay: 2s;
+  top: 30%;
+  background: linear-gradient(45deg, transparent, #8338ec, transparent);
+}
+
+body.dark-space-theme .pf-container::before {
+  animation-delay: 3s;
+  top: 15%;
+  right: -5%;
+  left: auto;
+  background: linear-gradient(-45deg, transparent, #ff006e, transparent);
 }
 
 @keyframes cosmic-stars {
@@ -179,91 +223,42 @@ body.dark-space-theme::after {
   }
 }
 
-@keyframes cosmic-nebula {
+@keyframes cosmic-energy-field {
   0% {
-    opacity: 0.3;
-    transform: scale(1) rotate(0deg);
+    opacity: 0.4;
+    transform: scale(1) rotate(0deg) translateX(0px);
   }
   50% {
-    opacity: 0.6;
-    transform: scale(1.1) rotate(2deg);
+    opacity: 0.7;
+    transform: scale(1.05) rotate(1deg) translateX(10px);
   }
   100% {
-    opacity: 0.4;
-    transform: scale(0.9) rotate(-1deg);
+    opacity: 0.5;
+    transform: scale(0.95) rotate(-0.5deg) translateX(-5px);
   }
 }
 
-/* Shooting stars */
-body.dark-space-theme {
-  overflow-x: hidden;
-}
-
-body.dark-space-theme .introduction::before {
-  content: '';
-  position: absolute;
-  top: 10%;
-  left: -10%;
-  width: 2px;
-  height: 2px;
-  background: linear-gradient(45deg, transparent, #ffffff, transparent);
-  border-radius: 50%;
-  animation: shooting-star 3s linear infinite;
-}
-
-body.dark-space-theme .introduction::after {
-  content: '';
-  position: absolute;
-  top: 30%;
-  right: -10%;
-  width: 1px;
-  height: 1px;
-  background: linear-gradient(-45deg, transparent, #06ffa5, transparent);
-  border-radius: 50%;
-  animation: shooting-star-reverse 4s linear infinite 1.5s;
-}
-
-@keyframes shooting-star {
+@keyframes shooting-star-multi {
   0% {
     transform: translateX(0) translateY(0) scale(0);
     opacity: 0;
   }
   10% {
-    transform: translateX(50px) translateY(50px) scale(1);
+    transform: translateX(80px) translateY(80px) scale(1);
     opacity: 1;
-    box-shadow: 0 0 10px #ffffff, -50px -50px 20px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 15px currentColor, -80px -80px 30px rgba(255, 255, 255, 0.2);
   }
   90% {
-    transform: translateX(300px) translateY(300px) scale(1);
+    transform: translateX(400px) translateY(400px) scale(1);
     opacity: 1;
-    box-shadow: 0 0 10px #ffffff, -50px -50px 20px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 15px currentColor, -80px -80px 30px rgba(255, 255, 255, 0.2);
   }
   100% {
-    transform: translateX(350px) translateY(350px) scale(0);
+    transform: translateX(450px) translateY(450px) scale(0);
     opacity: 0;
   }
 }
 
-@keyframes shooting-star-reverse {
-  0% {
-    transform: translateX(0) translateY(0) scale(0);
-    opacity: 0;
-  }
-  10% {
-    transform: translateX(-50px) translateY(50px) scale(1);
-    opacity: 1;
-    box-shadow: 0 0 10px #06ffa5, 50px -50px 20px rgba(6, 255, 165, 0.3);
-  }
-  90% {
-    transform: translateX(-300px) translateY(300px) scale(1);
-    opacity: 1;
-    box-shadow: 0 0 10px #06ffa5, 50px -50px 20px rgba(6, 255, 165, 0.3);
-  }
-  100% {
-    transform: translateX(-350px) translateY(350px) scale(0);
-    opacity: 0;
-  }
-}
 
 @keyframes gentle-pulse {
   0%,
