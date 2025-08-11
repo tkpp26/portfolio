@@ -11,7 +11,6 @@
   position: relative;
 }
 
-
 .experience-section.visible {
   opacity: 1;
   transform: translateY(0);
@@ -30,13 +29,18 @@
 }
 
 .wrapper-container::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 5px;
-  background: linear-gradient(90deg, var(--primary-pink), var(--sage-green), var(--soft-blue));
+  background: linear-gradient(
+    90deg,
+    var(--primary-pink),
+    var(--sage-green),
+    var(--soft-blue)
+  );
   border-radius: 25px 25px 0 0;
 }
 
@@ -50,7 +54,7 @@
 }
 
 .wrapper-container h1::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -10px;
   left: 50%;
@@ -67,13 +71,18 @@
 }
 
 .timeline-section::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
   width: 4px;
-  background: linear-gradient(180deg, var(--primary-pink), var(--sage-green), var(--soft-blue));
+  background: linear-gradient(
+    180deg,
+    var(--primary-pink),
+    var(--sage-green),
+    var(--soft-blue)
+  );
   border-radius: 2px;
 }
 
@@ -82,7 +91,7 @@
   padding-left: 0;
 }
 
-.timeline-section li {
+.timeline-section > ol > li {
   position: relative;
   padding-left: 2rem;
   margin-bottom: 3rem;
@@ -91,13 +100,13 @@
   transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.timeline-section li.visible {
+.timeline-section > ol > li.visible {
   opacity: 1;
   transform: translateX(0);
 }
 
-.timeline-section li::before {
-  content: '✨';
+.timeline-section > ol > li::before {
+  content: "✨";
   position: absolute;
   left: -2.5rem;
   top: 0;
@@ -130,7 +139,7 @@
 }
 
 .experience-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -174,27 +183,20 @@
 }
 
 .achievements {
-  list-style: none;
-  padding: 0;
+  list-style: disc; /* restore normal bullets */
+  padding-left: 1.5rem; /* indent bullets from card edge */
+  margin-top: 0.75rem;
 }
-
 .achievements li {
-  position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 0.5rem;
-  font-size: 0.95rem;
-  color: var(--text-light);
+  padding-left: 0; /* no extra padding since bullets are handled by list-style */
+  color: var(--text-dark);
   line-height: 1.5;
 }
 
-.achievements li::before {
-  content: '🌸';
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 0.8rem;
+.experience-card .achievements li {
+  color: #1f2937 !important; /* solid dark gray */
+  opacity: 1 !important;
 }
-
 /* Media Queries */
 @media (max-width: 768px) {
   .experience-section {

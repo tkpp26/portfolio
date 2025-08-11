@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 90vh;
   gap: 3rem;
 }
 
@@ -312,5 +312,54 @@
 
   .links-card {
     padding: 1.5rem;
+  }
+}
+
+.scroll-down-container {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scroll-down-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.mouse-icon {
+  width: 30px;
+  height: 50px;
+  border: 2px solid #aaa;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding-top: 5px;
+}
+
+.wheel {
+  width: 4px;
+  height: 8px;
+  background: #aaa;
+  border-radius: 2px;
+  animation: wheelScroll 1s infinite;
+}
+
+@keyframes wheelScroll {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

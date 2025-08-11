@@ -128,6 +128,21 @@ export default function Introduction() {
           </div>
         </div>
       </div>
+      <div className="scroll-down-container">
+        <button
+          className="scroll-down-btn"
+          onClick={() =>
+            document
+              .getElementById("about")
+              ?.scrollIntoView({ behavior: "smooth" })
+          }
+          aria-label="Scroll to portfolio"
+        >
+          <span className="mouse-icon">
+            <span className="wheel"></span>
+          </span>
+        </button>
+      </div>
     </div>
   );
 }
