@@ -5,8 +5,9 @@ import { faFileAlt, faRocket, faSun } from "@fortawesome/free-solid-svg-icons";
 import "../stylings/Introduction.css";
 import selfImg from "../assets/self_img.jpg";
 
-export default function Introduction({ isDarkTheme, toggleTheme }) {
+export default function Introduction() {
   const [index, setIndex] = useState(0);
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
   const [isVisible, setIsVisible] = useState({
     hero: false,
     linksCard: false,
@@ -16,6 +17,10 @@ export default function Introduction({ isDarkTheme, toggleTheme }) {
   const linksCardRef = useRef(null);
   const text = "Hi, I'm Shizuka";
 
+  const toggleTheme = () => {
+    setIsDarkTheme(!isDarkTheme);
+    document.body.classList.toggle('dark-space-theme', !isDarkTheme);
+  };
 
   useEffect(() => {
     const type = () => {
@@ -67,6 +72,19 @@ export default function Introduction({ isDarkTheme, toggleTheme }) {
     };
   }, []);
 
+  useEffect(() => {
+    // Apply theme class to body on component mount
+    if (isDarkTheme) {
+      document.body.classList.add('dark-space-theme');
+    } else {
+      document.body.classList.remove('dark-space-theme');
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.classList.remove('dark-space-theme');
+    };
+  }, [isDarkTheme]);
 
   return (
     <div id="intro" className="introduction">
