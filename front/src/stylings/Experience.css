@@ -252,3 +252,30 @@
     font-size: 0.95rem;
   }
 }
+
+.achievements.collapsed {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.achievements.expanded {
+  max-height: 1000px; /* large enough to fit all */
+  transition: max-height 0.4s ease;
+}
+
+.view-more-btn {
+  display: inline-block;
+  margin-top: 0.75rem;
+  background: var(--sage-green);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.view-more-btn:hover {
+  background: var(--primary-pink);
+}

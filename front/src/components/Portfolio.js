@@ -102,15 +102,7 @@ export default function Portfolio() {
       technologies: ["Python", "Streamlit", "AI"],
       image: minmax,
     },
-    {
-      title: "NewsWeb",
-      github: "https://github.com/tkpp26/NewsWeb",
-      demo: "https://www.youtube.com/watch?v=XXXXX",
-      description:
-        "A news application developed using JavaScript, HTML, and CSS. It leverages the NewsAPI to display recent news articles across various categories, allowing users to select their interests.",
-      technologies: ["JavaScript", "HTML", "CSS", "NewsAPI"],
-      image: newsWeb,
-    },
+
     {
       title: "Diabetes Risk Prediction Model",
       github: "https://github.com/tkpp26/Diabetes-Classification",
@@ -126,6 +118,15 @@ export default function Portfolio() {
         "Jupyter",
       ],
       image: image2,
+    },
+    {
+      title: "NewsWeb",
+      github: "https://github.com/tkpp26/NewsWeb",
+      demo: "https://www.youtube.com/watch?v=XXXXX",
+      description:
+        "A news application developed using JavaScript, HTML, and CSS. It leverages the NewsAPI to display recent news articles across various categories, allowing users to select their interests.",
+      technologies: ["JavaScript", "HTML", "CSS", "NewsAPI"],
+      image: newsWeb,
     },
   ];
 

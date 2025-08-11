@@ -5,7 +5,10 @@ export default function Experience() {
   const [visibleSections, setVisibleSections] = useState({});
   const experienceRefs = useRef([]);
   const containerRef = useRef(null);
-
+  const [expanded, setExpanded] = useState({});
+  const toggleExpand = (id) => {
+    setExpanded((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -125,28 +128,48 @@ export default function Experience() {
         <h1>Experience</h1>
         <div className="timeline-section">
           <ol>
-            {experiences.map((experience, index) => (
-              <li
-                key={experience.id}
-                id={experience.id}
-                className={`${visibleSections[experience.id] ? "visible" : ""}`}
-                ref={(el) => (experienceRefs.current[index] = el)}
-              >
-                <div className="experience-card">
-                  <h3>{experience.title}</h3>
-                  <div className="role-duration">
-                    <div className="role">{experience.role}</div>
-                    <div className="duration">{experience.duration}</div>
+            {experiences.map((experience, index) => {
+              const isExpanded =
+                expanded[experience.id] || window.innerWidth > 768;
+              return (
+                <li
+                  key={experience.id}
+                  id={experience.id}
+                  className={`${
+                    visibleSections[experience.id] ? "visible" : ""
+                  }`}
+                  ref={(el) => (experienceRefs.current[index] = el)}
+                >
+                  <div className="experience-card">
+                    <h3>{experience.title}</h3>
+                    <div className="role-duration">
+                      <div className="role">{experience.role}</div>
+                      <div className="duration">{experience.duration}</div>
+                    </div>
+                    <p className="description">{experience.description}</p>
+
+                    <ul
+                      className={`achievements ${
+                        isExpanded ? "expanded" : "collapsed"
+                      }`}
+                    >
+                      {experience.achievements.map((achievement, idx) => (
+                        <li key={idx}>{achievement}</li>
+                      ))}
+                    </ul>
+
+                    {window.innerWidth <= 768 && (
+                      <button
+                        className="view-more-btn"
+                        onClick={() => toggleExpand(experience.id)}
+                      >
+                        {isExpanded ? "View Less" : "View More"}
+                      </button>
+                    )}
                   </div>
-                  <p className="description">{experience.description}</p>
-                  <ul className="achievements">
-                    {experience.achievements.map((achievement, idx) => (
-                      <li key={idx}>{achievement}</li>
-                    ))}
-                  </ul>
-                </div>
-              </li>
-            ))}
+                </li>
+              );
+            })}
           </ol>
         </div>
       </div>
